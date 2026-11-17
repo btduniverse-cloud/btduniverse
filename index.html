@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BTD UNIVERSE — Hub Operacional Transmídia</title>
     <style>
-        /* Restauração completa da paleta e tipografia do diretório mestre */
         :root {
             --bg: #030306;
             --ink: #f5f5f7;
@@ -13,7 +12,6 @@
             --purple: #7000ff;
             --pink: #ff007f;
             --gold: #ffd166;
-            --sans: 'Rajdhani', sans-serif;
             --mono: 'Space Mono', monospace;
         }
         body {
@@ -29,9 +27,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #111115;
+            border-bottom: 2px solid #14141f;
             padding-bottom: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .logo-txt {
             color: var(--cyan);
@@ -39,126 +37,105 @@
             letter-spacing: 4px;
             font-weight: bold;
         }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
         .nav-links a {
             color: var(--ink);
             text-decoration: none;
+            margin-left: 15px;
             font-size: 0.85rem;
             border: 1px solid #222230;
             padding: 6px 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
         }
         .nav-links a:hover {
             background: var(--cyan);
             color: #000000;
-            border-color: var(--cyan);
         }
-        .portfolio-btn {
-            border-color: var(--pink) !important;
-            color: var(--pink) !important;
+        .portfolio-btn { border-color: var(--pink) !important; color: var(--pink) !important; }
+        .lux-btn { border-color: var(--gold) !important; color: var(--gold) !important; }
+
+        /* Manifesto de Abertura */
+        .manifesto-container {
+            background: #06060c;
+            border: 1px solid #181826;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--purple);
         }
-        .portfolio-btn:hover {
-            background: var(--pink) !important;
-            color: #000000 !important;
+        .manifesto-title {
+            color: var(--cyan);
+            font-size: 1.1rem;
+            margin-top: 0;
+            letter-spacing: 2px;
         }
-        .lux-btn {
-            border-color: var(--gold) !important;
-            color: var(--gold) !important;
-        }
-        .lux-btn:hover {
-            background: var(--gold) !important;
-            color: #000000 !important;
-        }
+
         .grid-main {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 35px;
-            margin-bottom: 40px;
         }
-        @media (max-width: 900px) {
-            .grid-main { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 900px) { .grid-main { grid-template-columns: 1fr; } }
+        
         .card {
             background: #09090e;
             border: 1px solid #14141f;
             padding: 25px;
             border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .tag-laranja {
-            color: var(--gold);
+        .tag {
             font-size: 0.75rem;
             text-transform: uppercase;
-            border: 1px solid var(--gold);
+            border: 1px solid;
             padding: 2px 8px;
             display: inline-block;
             margin-bottom: 15px;
             letter-spacing: 1px;
+            width: fit-content;
         }
-        .tag-verde {
-            color: #00ffcc;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            border: 1px solid #00ffcc;
-            padding: 2px 8px;
-            display: inline-block;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        .card-title { color: var(--cyan); margin-top: 0; font-size: 1.25rem; }
+        .card-desc { color: #a0a0ab; font-size: 0.95rem; margin-bottom: 15px; text-align: justify; }
+        .card-link { color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: bold; margin-top: 10px; display: inline-block; }
+        .card-link:hover { text-decoration: underline; }
+        
+        /* Imagens e Mídia */
+        .media-placeholder {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: cover;
+            background: #020205;
+            border: 1px solid #1a1a26;
+            margin-top: 15px;
         }
-        .card-title {
-            color: var(--cyan);
-            margin-top: 0;
-            font-size: 1.25rem;
-            letter-spacing: 1px;
-        }
-        .card-desc {
-            color: #a0a0ab;
-            font-size: 0.95rem;
-        }
-        /* Contêiner do Player Nativo */
         .audio-container {
             background: #010103;
             border-left: 3px solid var(--pink);
             padding: 15px;
             margin: 20px 0;
         }
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-        /* Links de Plataformas */
+        audio { width: 100%; margin-top: 10px; }
+        
         .streaming-links {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             margin-top: 20px;
         }
+        @media (max-width: 600px) { .streaming-links { grid-template-columns: 1fr 1fr; } }
         .btn-stream {
-            background: #111116;
-            border: 1px solid #222230;
-            color: var(--ink);
-            padding: 8px;
-            text-align: center;
-            font-size: 0.75rem;
-            text-decoration: none;
+            background: #111116; border: 1px solid #222230; color: var(--ink);
+            padding: 8px; text-align: center; font-size: 0.75rem; text-decoration: none;
             text-transform: uppercase;
-            transition: all 0.2s ease;
         }
-        .btn-stream:hover {
-            background: var(--ink);
-            color: #000000;
-        }
+        .btn-stream:hover { background: var(--ink); color: #000000; }
         .status-dev {
             color: var(--pink);
             font-size: 0.8rem;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-top: 15px;
+            margin-top: 10px;
             display: block;
         }
     </style>
@@ -168,62 +145,65 @@
     <header>
         <div class="logo-txt">BTD UNIVERSE</div>
         <nav class="nav-links">
-            <!-- Espaço reservado para a rota da IA LUX AURA -->
-            <a href="lux-aura.html" class="lux-btn">CONECTAR LUX AURA</a>
-            <!-- Espaço reservado para links externos de tradução -->
+            <a href="lux-aura.html" class="lux-btn">CONECTAR LUX AURA (EM DESENVOLVIMENTO)</a>
             <a href="#">EN</a>
             <a href="#">ES</a>
-            <!-- Espaço reservado para o Portfólio Lucian Lourenço -->
             <a href="https://github.com" class="portfolio-btn">PORTFÓLIO LUCIAN LOURENÇO</a>
         </nav>
     </header>
 
+    <!-- MANIFESTO DO ECOSSISTEMA TRANSMÍDIA -->
+    <section class="manifesto-container">
+        <h2 class="manifesto-title">// DIRETRIZ ESTRUTURAL DA PROPRIEDADE INTELECTUAL</h2>
+        <p style="font-size: 0.95rem; margin: 0; color: #c5c5d2; text-align: justify;">
+            O <strong>BTD Universe (Breaking Through Digital)</strong> nasceu de forma orgânica a partir do conto original <em>Born to Die</em> — uma obra visceral nascida do luto e das perdas, inteiramente fundamentada no encontro ancestral, neurociência aplicada, high concept, memória e afeto. Este ecossistema transmídia rejeita fórmulas industriais artificiais e enxertos puramente comerciais. Ele cresceu e ramificou-se de forma inevitável, orgânica e autoexpansiva por múltiplos mundos: neurociência, literatura, roteiro audiovisual, música, linguagem cinematográfica e ARG.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--gold); margin: 15px 0 0 0; border-top: 1px dashed #222235; padding-top: 15px;">
+            🔒 <strong>ESPINHA DORSAL AVCTORIS BLOCKCHAIN:</strong> Constitui a segurança e validação onde o roteiro audiovisual, o manuscrito literário (O Codex) e a identidade musical autoral (produzida por SadStink em Latim e Inglês) operam em simbiose narrativa. Todos os elementos intelectuais e fonográficos descritos estão integralmente protegidos por direitos de propriedade industrial e autoral do criador <strong>Lucian Lourenço</strong>.
+        </p>
+    </section>
+
     <main class="grid-main">
 
-        <!-- PROJETO MESTRE: GROUND ZERO -->
+        <!-- BLOCO 1: O FIO TÊNUE – LITERATURA CÊNICA -->
         <article class="card">
-            <div class="tag-laranja">Rodadas de Negócio / Pitching</div>
-            <h2 class="card-title">GROUND ZERO / ZEUS KOR — SÉRIE LONGA</h2>
-            <p class="card-desc">Projeto transmídia de ficção e suspense psicológico fortemente ancorado em neurociência. Selecionado e em circulação ativa em rodadas de negócios de audiovisual e eventos de mercado internacionais.</p>
+            <div>
+                <div class="tag" style="color: var(--cyan); border-color: var(--cyan);">PUBLICADO / CODEX MESTRE</div>
+                <h2 class="card-title">O FIO TÊNUE – LITERATURA CÊNICA</h2>
+                <p class="card-desc">Fundação narrativa e poética do ecossistema. Obra impressa e distribuída que ancora as subjetividades e fraturas de todo o universo expandido.</p>
+                <p class="card-desc" style="color: var(--gold); font-weight: bold;">[ LANÇAMENTO OFICIAL EM FORTALEZA: JANEIRO DE 2027 ]</p>
+                <a href="https://caravanaeditorial.com.br" target="_blank" class="card-link">→ ADQUIRIR NA EDITORA CARAVANA</a>
+            </div>
+            <img src="fio_tenue_capa.png" alt="Capa O Fio Tênue - Lucian Lourenço" class="media-placeholder" style="max-height: 320px;" onerror="this.style.display='none';">
         </article>
 
-        <!-- TRILHA SONORA ORIGINAL: SADSTINK -->
+        <!-- BLOCO 2: SADSTINK: MUSEU DE MENTIRAS – GRAPHIC NOVEL -->
         <article class="card">
-            <div class="tag-verde">Streaming Pipeline</div>
-            <h2 class="card-title">SADSTINK — TRILHA SONORA ORIGINAL</h2>
-            <p class="card-desc">Conceito musical híbrido fundindo ópera gótica, post-grunge e dinâmicas eletrônicas sob o selo Macondo. Direitos e linhas fonográficas protegidos via Avctoris IP Blockchain.</p>
-            
-            <div class="audio-container">
-                <span style="color: var(--pink); font-size: 0.75rem; font-weight: bold;">RUNNING CORE PIPELINE: Museum of Lies</span>
-                <!-- Player corrigido com caminho relativo para leitura direta no repositório -->
-                <audio controls>
-                    <source src="museum_of_lies.mp3" type="audio/mpeg">
-                </audio>
+            <div>
+                <div class="tag" style="color: var(--pink); border-color: var(--pink);">EM ANDAMENTO / PRODUCTION</div>
+                <h2 class="card-title">SADSTINK: MUSEU DE MENTIRAS – GRAPHIC NOVEL</h2>
+                <p class="card-desc">Desenvolvimento visual, ilustrações, storyboards e romances gráficos derivados da esteira conceitual da banda. Mitologia expandida em fase ativa de ilustração.</p>
             </div>
+            <a href="https://youtube.com" target="_blank" class="card-link" style="margin-top: auto;">→ VER CANAL DA BANDA NO YOUTUBE</a>
+        </article>
 
-            <div class="streaming-links">
-                <a href="#" class="btn-stream">Spotify</a>
-                <a href="#" class="btn-stream">Apple</a>
-                <a href="#" class="btn-stream">Amazon</a>
-                <a href="#" class="btn-stream">Youtube</a>
+        <!-- BLOCO 3: GROUND ZERO / ZEUS KOR — SÉRIE LONGA -->
+        <article class="card">
+            <div>
+                <div class="tag" style="color: var(--gold); border-color: var(--gold);">RODADAS DE NEGÓCIO / PITCHING MESTRE</div>
+                <h2 class="card-title">GROUND ZERO / ZEUS KOR — SÉRIE </h2>
+                <p class="card-desc">
+                    <strong>LOGLINE:</strong> Em um thriller político e corporativo de high concept, fundamentado em neurociência aplicada, um padre excomungado e uma jornalsita investigativa descobrem os planosorganização global (CONGLOMERADO DE BIG TECHS) projetado para mapear e manipular a consciência e a cognição humanas. Nesse esteio, nasce Zeus KOR, uma IA senciente que quer colapsar o mundo.
+                </p>
+                <span class="status-dev" style="color: var(--gold);">[ SELECIONADA PARA RODADAS DE NEGÓCIOS COM CO-PRODUÇÃO INTERNACIONAL ]</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                <img src="ground_zero_zyx.png" alt="Ground Zero ZYX Poster" class="media-placeholder" onerror="this.style.display='none';">
+                <img src="ground_zero_sadstink.png" alt="Ground Zero SadStink Poster" class="media-placeholder" onerror="this.style.display='none';">
             </div>
         </article>
 
-        <!-- SÉRIE FUNDACIONAL 1: O TECIDO VISÍVEL DO NADA -->
-        <article class="card" style="border-style: dashed; border-color: var(--cyan);">
-            <h2 class="card-title" style="color: var(--ink);">O TECIDO VISÍVEL DO NADA</h2>
-            <p class="card-desc">Série fundacional. A espinha dorsal narrativa e conceitual aplicada aos mistérios analíticos e biológicos da neurociência dentro do suspense psicológico.</p>
-            <span class="status-dev">[ EM DESENVOLVIMENTO ]</span>
-        </article>
-
-        <!-- SÉRIE FUNDACIONAL 2: BORN TO DIE -->
-        <article class="card" style="border-style: dashed; border-color: var(--cyan);">
-            <h2 class="card-title" style="color: var(--ink);">BORN TO DIE</h2>
-            <p class="card-desc">Série fundacional. O marco zero mitológico de onde emanam as conexões latentes, narrativas e segredos que alimentam todo o ecossistema transmídia.</p>
-            <span class="status-dev">[ EM DESENVOLVIMENTO ]</span>
-        </article>
-
-    </main>
-
-</body>
-</html>
+        <!-- BLOCO 4: SADSTINK — TRILHA SONORA ORIGINAL E DISRUPTIVA -->
+        <article class="card" style="border-color: var(--pink); background: #06060a;">
+            <div>
+                <div class="tag" style="color: #00ffcc; border-color: #00ffcc;">STREAMING PIPELINE / CORE AXIS</div>
